@@ -10,16 +10,24 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'thin'
+gem 'factory_girl_rails'
+gem 'haml'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'database_cleaner'
+  gem 'faker'
 end
 
 group :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
