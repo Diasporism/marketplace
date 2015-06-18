@@ -1,5 +1,11 @@
-- @subjects.each do |subject|
-  .page-header
-    %h1
-      = subject.name
-      %small Top Rated Topics
+.container
+  - @subjects.each do |subject|
+    .page-header
+      %h1
+        = subject.name
+        %small Top Rated Topics
+    .row
+      - subject.courses.each do |course|
+        .col-xs-6.col-md-3
+          %a.thumbnail{:href => "#"}
+            %img{:alt => "...", :src => "holder.js/200x200"}
