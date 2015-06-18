@@ -1,7 +1,7 @@
 require_relative '../rails_helper'
 
-describe Discipline do
+describe Subject do
   it 'works' do
-    expect(true).to eq true
+    expect(Subject.new).to be
   end
 end

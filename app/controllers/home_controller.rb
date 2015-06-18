@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @disciplines = Discipline.all
+    @subjects = Subject.all
   end
 
 end
