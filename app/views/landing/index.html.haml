@@ -1,0 +1,8 @@
+- @topics.each do |topic|
+  %h1
+    = topic.name
+  - topic.guides.each do |guide|
+    %h3
+      = guide.title
+    %p
+      = guide.body
