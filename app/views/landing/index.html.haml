@@ -1,8 +1,13 @@
-- @topics.each do |topic|
-  %h1
-    = topic.name
-  - topic.guides.each do |guide|
-    %h3
-      = guide.title
-    %p
-      = guide.body
+%aside
+  %h1 Mentorwise
+%main
+  - @topics.each do |topic|
+    %article{:class=>topic.name.downcase.gsub(' ', '-')}
+      %h1
+        = topic.name
+      - topic.guides.each do |guide|
+        .guide{:class=>topic.name.downcase.gsub(' ', '-')}
+          .title
+            = guide.title
+          .tags
+            = "##{guide.topics.map(&:name).join(', #')}"

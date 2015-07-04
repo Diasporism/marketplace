@@ -1,0 +1,61 @@
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #34495e;
+
+  h1 {
+
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    font-weight: 900;
+    padding-left: 10px;
+    margin: 0px;
+  }
+}
+
+main {
+  margin-left: 213px;
+
+  article {
+
+    .ruby {
+      background-color: #e74c3c;
+    }
+
+    .javascript {
+      background-color: #3498db;
+    }
+
+    .painting {
+      background-color: #f1c40f;
+    }
+
+    .rock-climbing {
+      background-color: #2ecc71;
+    }
+
+    .guide {
+      position: relative;
+      display: inline-block;
+      width: 378px;
+      height: 242px;
+      overflow: hidden;
+      margin-left: -1px;
+      padding: 10px;
+
+      .title {
+        position: relative;
+        font-size: 20px;
+      }
+
+      .tags {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  }
+}
