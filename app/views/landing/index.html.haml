@@ -2,11 +2,12 @@
   %h1 Mentorwise
 %main
   - @topics.each do |topic|
-    %article{:class=>topic.name.downcase.gsub(' ', '-')}
+    - topic_class = topic.name.downcase.gsub(' ', '-')
+    %article{class: topic_class}
       %h1
         = topic.name
       - topic.guides.each do |guide|
-        .guide{:class=>topic.name.downcase.gsub(' ', '-')}
+        .guide{class: topic_class}
           .title
             = guide.title
           .tags
