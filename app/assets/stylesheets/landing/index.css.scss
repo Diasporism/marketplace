@@ -56,14 +56,20 @@ header {
   right: 49px;
   top: 60px;
   z-index: 4;
+  padding-top: 4px;
   display: none;
 
   ul {
-    list-style-image: url('http://placehold.it/40x40');
-    list-style-position: outside;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    background: url('http://placehold.it/40x40') no-repeat left center;
+    padding: 15px 1px 15px 46px;
   }
 }
-
 
 main {
   margin-left: 216px;
