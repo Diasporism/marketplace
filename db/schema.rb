@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702021541) do
+ActiveRecord::Schema.define(version: 20150704224504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "courses", force: :cascade do |t|
+  create_table "disciplines", force: :cascade do |t|
     t.string   "name"
-    t.integer  "subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,12 +25,6 @@ ActiveRecord::Schema.define(version: 20150702021541) do
   create_table "guides", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +40,9 @@ ActiveRecord::Schema.define(version: 20150702021541) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "discipline_id"
   end
+
+  add_index "topics", ["discipline_id"], name: "index_topics_on_discipline_id", using: :btree
 
 end

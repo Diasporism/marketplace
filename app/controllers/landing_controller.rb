@@ -1,7 +1,7 @@
 class LandingController < ApplicationController
 
   def index
-    @topics = Topic.includes(:guides).all
+    @disciplines = Discipline.includes(topics: :guides).all
   end
 
 end

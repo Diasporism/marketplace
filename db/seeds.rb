@@ -1,7 +1,11 @@
-ruby_topic       = FactoryGirl.create(:topic, name: 'Ruby')
-javascript_topic = FactoryGirl.create(:topic, name: 'Javascript')
-painting_topic   = FactoryGirl.create(:topic, name: 'Painting')
-climbing_topic   = FactoryGirl.create(:topic, name: 'Rock Climbing')
+programming_discipline    = FactoryGirl.create(:discipline, name: 'Programming')
+visual_arts_discipline    = FactoryGirl.create(:discipline, name: 'Visual Arts')
+outdoor_sports_discipline = FactoryGirl.create(:discipline, name: 'Outdoor Sports')
+
+ruby_topic       = FactoryGirl.create(:topic, name: 'Ruby', discipline: programming_discipline)
+javascript_topic = FactoryGirl.create(:topic, name: 'Javascript', discipline: programming_discipline)
+painting_topic   = FactoryGirl.create(:topic, name: 'Painting', discipline: visual_arts_discipline)
+climbing_topic   = FactoryGirl.create(:topic, name: 'Rock Climbing', discipline: outdoor_sports_discipline)
 
 ruby_guides = [
     FactoryGirl.create(:guide, title: 'Setting up your dev environment'),
