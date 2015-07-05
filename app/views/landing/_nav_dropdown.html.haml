@@ -1,6 +1,6 @@
 #nav-dropdown
   %ul
     - disciplines.each do |discipline|
-      %li
+      %li{'data-discipline' => discipline.name}
         .discipline
           = discipline.name

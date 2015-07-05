@@ -3,20 +3,21 @@
 %header
   #nav-button
   #nav-section
-    Section Here
-= render partial: 'nav_dropdown', locals: {disciplines: @disciplines}
+    = @disciplines.first.name
+  = render partial: 'nav_dropdown', locals: {disciplines: @disciplines}
 %main
   - @disciplines.each do |discipline|
-    %h1
-      = discipline.name
-    - discipline.topics.each do |topic|
-      - topic_class = topic.name.downcase.gsub(' ', '-')
-      %article{class: topic_class}
-        %h1
-          = topic.name
-        - topic.guides.each do |guide|
-          .guide{class: topic_class}
-            .title
-              = guide.title
-            .tags
-              = "##{discipline.name} ##{guide.topics.map(&:name).join(', #')}"
+    .discipline-section{'data-discipline' => discipline.name }
+      %h1
+        = discipline.name
+      - discipline.topics.each do |topic|
+        - topic_class = topic.name.downcase.gsub(' ', '-')
+        %article{class: topic_class}
+          %h1
+            = topic.name
+          - topic.guides.each do |guide|
+            .guide{class: topic_class}
+              .title
+                = guide.title
+              .tags
+                = "##{discipline.name} ##{guide.topics.map(&:name).join(', #')}"
